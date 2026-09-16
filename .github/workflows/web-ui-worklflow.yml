@@ -37,10 +37,11 @@ jobs:
       if: always()
       with:
         name: Cucumber Reports 
-        path: reports
+        path: report
 
     - name: GitHub Pages action
+      if: always()
       uses: peaceiris/actions-gh-pages@v4.1.0
       with:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_DIR: reports
+        PUBLISH_DIR: report
